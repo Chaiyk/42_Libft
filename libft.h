@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:23:15 by ychai             #+#    #+#             */
-/*   Updated: 2024/03/14 15:23:17 by ychai            ###   ########.fr       */
+/*   Updated: 2024/03/14 15:44:05 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_isprint(int c);
 int		ft_strlen(char const *str);
 void	ft_memset(char *ptr, int text, int i);
 void	ft_bzero(char *ptr, int i);
-void	ft_memcpy(char *target, char *source, int num);
+void	*ft_memcpy(char *target, char *source, int num);
 void	ft_memmove(char *dest, char *source, int num);
 int		ft_strlcpy(char *dest, char *source, int length);
 int		ft_strlcat(char *dest, char *src, int len);
