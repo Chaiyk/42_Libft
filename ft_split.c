@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Steven <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/19 15:13:12 by Steven            #+#    #+#             */
-/*   Updated: 2024/01/02 19:00:01 by Steven           ###   ########.fr       */
+/*   Created: 2024/03/14 14:07:17 by ychai             #+#    #+#             */
+/*   Updated: 2024/03/14 14:13:07 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_count(char const *s, char const c)
 {

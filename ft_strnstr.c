@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 08:52:43 by ychai             #+#    #+#             */
-/*   Updated: 2024/01/03 13:16:33 by Steven           ###   ########.fr       */
+/*   Updated: 2024/03/14 14:44:57 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(void)
 	char	*check_str;
 	int		i;
 
-	printf("\nMain String: %s\n", main_str);
+	printf("\n*Main String: %s\n", main_str);
 
 	i = 5;
 	check_str = "llo";

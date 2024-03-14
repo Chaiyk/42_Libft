@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Steven <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/30 01:16:03 by Steven            #+#    #+#             */
-/*   Updated: 2024/01/02 19:02:51 by Steven           ###   ########.fr       */
+/*   Created: 2024/03/14 14:15:30 by ychai             #+#    #+#             */
+/*   Updated: 2024/03/14 14:19:38 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(char *str)
 {
@@ -39,13 +39,13 @@ int	main(void)
 	char*	ret_str;
 
 	main_str = "Hello World!";
-	ret_str = (char*)strdup(main_str);
+	ret_str = strdup(main_str);
 	printf("\n--Ori--\nReturn: %s\n", ret_str);
 
 	ret_str = "";
 	printf("\n--Reset--\nReturn: %s\n", ret_str);
 
-	ret_str = (char*)ft_strdup(main_str);
+	ret_str = ft_strdup(main_str);
 	printf("\n--Own--\nReturn: %s\n", ret_str);
 
 	free(ret_str);

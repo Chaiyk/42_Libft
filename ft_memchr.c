@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 08:46:02 by ychai             #+#    #+#             */
-/*   Updated: 2024/01/02 18:51:01 by Steven           ###   ########.fr       */
+/*   Updated: 2024/03/14 13:41:10 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ int	main(void)
 	chr = 'o';
 	i = 3;
 	printf("\nString: %s\nCharacter: %c\nNum: %d\n
-		Ori Return: %s\nOwn Return: %s\n",\
+			Ori Return: %s\nOwn Return: %s\n",\
 		   	strA, chr, i, memchr(strA, chr, i), ft_memchr(strA, chr, i));
 
 	chr = 'o';
 	i = 5;
 	printf("\nString: %s\nCharacter: %c\nNum: %d\n
-		Ori Return: %s\nOwn Return: %s\n\n",\
+			Ori Return: %s\nOwn Return: %s\n\n",\
 		   	strA, chr, i, memchr(strA, chr, i), ft_memchr(strA, chr, i));
 }
 */

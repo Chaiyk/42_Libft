@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 10:57:56 by ychai             #+#    #+#             */
-/*   Updated: 2024/01/03 12:53:47 by Steven           ###   ########.fr       */
+/*   Updated: 2024/03/14 14:35:28 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(void)
 
 	int	result = ft_strlcpy(textCpy, text, 5);
 
-	printf("Main Text: %s\nText Copyed: %s (Result: %d)\n"
+	printf("*Main Text: %s\nText Copyed: %s (Result: %d)\n"
 		, text, textCpy, result);
 }
 */

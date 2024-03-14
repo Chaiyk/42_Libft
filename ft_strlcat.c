@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 11:29:35 by ychai             #+#    #+#             */
-/*   Updated: 2024/01/03 12:53:18 by Steven           ###   ########.fr       */
+/*   Updated: 2024/03/14 15:21:36 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_strlcat(char *dest, char *src, int len)
 		dest[dest_len + cpy_count] = src[cpy_count];
 		cpy_count++;
 	}
-	dest[cpy_count] = '\0';
+	dest[dest_len + cpy_count] = '\0';
 	return (dest_len + src_len);
 }
 /*

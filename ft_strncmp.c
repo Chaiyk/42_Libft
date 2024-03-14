@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 12:06:23 by ychai             #+#    #+#             */
-/*   Updated: 2024/01/03 13:02:43 by Steven           ###   ########.fr       */
+/*   Updated: 2024/03/14 14:43:18 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ int	main (void)
 	int		i;
 
 	i = 1;
-	printf("String 1: %s\nString 2: %s\nOri Return: %d\nOwn Return: %d\n"
+	printf("\nString 1: %s\nString 2: %s\nOri Return: %d\nOwn Return: %d\n"
 		, str1, str2, strncmp(str1, str2, i), ft_strncmp(str1, str2, i));
 
 	i = 5;
-	printf("String 1: %s\nString 2: %s\nOri Return: %d\nOwn Return: %d\n"
+	printf("\nString 1: %s\nString 2: %s\nOri Return: %d\nOwn Return: %d\n"
 		, str1, str2, strncmp(str1, str2, i), ft_strncmp(str1, str2, i));
 }
 */

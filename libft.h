@@ -1,3 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/14 15:23:15 by ychai             #+#    #+#             */
+/*   Updated: 2024/03/14 15:23:17 by ychai            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdlib.h>
+#include <unistd.h>
+
 int		ft_isalpha(char text);
 int		ft_isdigit(char text);
 int		ft_isalnum(char text);
@@ -19,7 +34,6 @@ void	*ft_memchr(char *str, int chr, int n);
 int		ft_memcmp(const char *str1, const char *str2, int len);
 char	*ft_strnstr(char *main_str, char *check_str, int len);
 int		ft_atoi(char str[]);
-void	*ft_calloc(int num, int size);
 char	*ft_strdup(char *str);
 void	*ft_calloc(int num, int size);
 char	*ft_strdup(char *str);
@@ -32,3 +46,5 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *c, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);

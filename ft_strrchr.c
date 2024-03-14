@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 12:01:05 by ychai             #+#    #+#             */
-/*   Updated: 2024/01/03 13:17:57 by Steven           ###   ########.fr       */
+/*   Updated: 2024/03/14 15:22:13 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ int	main(void)
 	
 	str = "Hello World!!";
 	chr = 'a';
-	printf("\nString: %s\n Character: %c\n Ori Return: %s\n
-		Own Return: %s\n\n", str, chr, strrchr(str, chr), ft_strrchr(str,chr));
+	printf("\nString: %s\nCharacter: %c\nOri Return: %s\n
+	Own Return: %s\n\n", str, chr, strrchr(str, chr), ft_strrchr(str,chr));
 	chr = 'o';
-	printf("\nString: %s\n Character: %c\n Ori Return: %s\n
-		Own Return: %s\n\n", str, chr, strrchr(str, chr), ft_strrchr(str,chr));
+	printf("\nString: %s\nCharacter: %c\nOri Return: %s\n
+	Own Return: %s\n\n", str, chr, strrchr(str, chr), ft_strrchr(str,chr));
 }
 */

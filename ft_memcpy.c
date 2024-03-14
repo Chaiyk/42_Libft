@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 10:52:47 by ychai             #+#    #+#             */
-/*   Updated: 2024/01/02 18:53:15 by Steven           ###   ########.fr       */
+/*   Updated: 2024/03/14 13:47:11 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ int	main(void)
 	printf("Before:\nStrA: %s\nStrB: %s\n", strA, strB);
 	
 	ft_memcpy(strB, strA, 6);
-	printf("\nAfter:\nStrA: %s\nStrB: %s", strA, strB);
+	printf("\nAfter:\nStrA: %s\nStrB: %s\n", strA, strB);
 }
 */

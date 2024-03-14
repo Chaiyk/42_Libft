@@ -1,6 +1,18 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/14 14:50:19 by ychai             #+#    #+#             */
+/*   Updated: 2024/03/14 15:23:00 by ychai            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	ft_memcpy(char *dest, char const *src)
+#include "libft.h"
+
+void	ft_own_memcpy(char *dest, char const *src)
 {
 	int	i;
 
@@ -16,10 +28,11 @@ void	ft_memcpy(char *dest, char const *src)
 void	ft_backcheck(char *temp_str, char const *set,
 		int str_count, int set_count)
 {
-	if ((set[set_count] == '\0') && (temp_str[str_count] == '\0'))
-		temp_str[str_count - set_count - set_count] = '\0';
-	else if ((set[set_count] == '\0') && (temp_str[str_count] != '\0'))
-		temp_str[str_count - set_count] = '\0';
+	if (set[set_count] == '\0')
+	{
+		if (temp_str[str_count] == '\0')
+			temp_str[str_count - set_count] = '\0';
+	}
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -34,12 +47,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (s1[set_count] == set[set_count])
 		set_count++;
 	if (set[set_count] == '\0')
-		ft_memcpy(temp_str, s1 + set_count);
+		ft_own_memcpy(temp_str, s1 + set_count);
 	else
-		ft_memcpy(temp_str, s1);
-	while (s1[str_count] != '\0')
+		ft_own_memcpy(temp_str, s1);
+	while (temp_str[str_count] != '\0')
 	{
-		if (s1[str_count] == set[set_count])
+		if (temp_str[str_count] == set[set_count])
 			set_count++;
 		else
 			set_count = 0;
@@ -60,14 +73,23 @@ int	main(void)
 	set = "42";
 
 	printf("\n-----\nCheck 1\n-----\nString: %s\nSet: %s\n
-		Return: %s\n\n", string, set, ft_strtrim(string, set));
+Return: %s\n\n", string, set, ft_strtrim(string, set));
 
 	string = "42Hello World!!";
 	printf("-----\nCheck 2\n-----\nString: %s\nSet: %s\n
-		Return: %s\n\n", string, set, ft_strtrim(string, set));
+Return: %s\n\n", string, set, ft_strtrim(string, set));
 
 	string = "Hello World!!42";
 	printf("-----\nCheck 3\n-----\nString: %s\nSet: %s\n
-		Return: %s\n\n", string, set, ft_strtrim(string, set));
+Return: %s\n\n", string, set, ft_strtrim(string, set));
+
+	string = "Hello World!!";
+	printf("-----\nCheck 4\n-----\nString: %s\nSet: %s\n
+Return: %s\n\n", string, set, ft_strtrim(string, set));
+
+	set = "";
+	string = "42Hello World!!42";
+	printf("-----\nCheck 5\n-----\nString: %s\nSet: %s\n
+Return: %s\n\n", string, set, ft_strtrim(string, set));
 }
 */

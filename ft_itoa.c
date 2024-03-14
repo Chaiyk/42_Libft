@@ -1,4 +1,16 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/14 13:35:10 by ychai             #+#    #+#             */
+/*   Updated: 2024/03/14 15:21:18 by ychai            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_digit_count(int n)
 {
@@ -19,8 +31,9 @@ char	*ft_itoa(int n)
 {
 	int		digit_count;
 	int		neg;
-	char	*str;	
+	char	*str;
 
+	neg = 0;
 	digit_count = ft_digit_count(n);
 	if (n < 0)
 	{

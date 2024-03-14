@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/14 14:20:04 by ychai             #+#    #+#             */
+/*   Updated: 2024/03/14 14:22:21 by ychai            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-//#include <stdio.h>
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
@@ -15,6 +26,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	}
 }
 /*
+#include <stdio.h>
+
 void	f(unsigned int i, char* chr)
 {
 	printf("%s\n", chr);

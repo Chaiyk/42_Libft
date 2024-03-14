@@ -6,12 +6,9 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:56:59 by ychai             #+#    #+#             */
-/*   Updated: 2024/01/02 18:47:36 by Steven           ###   ########.fr       */
+/*   Updated: 2024/03/14 13:31:25 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//#include <stdio.h>
-//#include <ctype.h>
 
 int	ft_isalnum(char text)
 {
@@ -23,6 +20,9 @@ int	ft_isalnum(char text)
 		return (0);
 }
 /*
+#include <stdio.h>
+#include <ctype.h>
+
 int main ()
 {
 	char text;
