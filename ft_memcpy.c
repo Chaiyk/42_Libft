@@ -6,26 +6,35 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 10:52:47 by ychai             #+#    #+#             */
-/*   Updated: 2024/03/14 15:52:17 by ychai            ###   ########.fr       */
+/*   Updated: 2024/04/02 13:37:27 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(char *target, char *source, int num)
+#include "libft.h"
+
+void	*ft_memcpy(void *target, const char *source, int num)
 {
-	while ((num > 0) && (source != 0))
+	char	*ptr;
+	int	i;
+
+	ptr = target;
+	i = 0;
+	if (source != NULL)
 	{
-		*target = *source;
-		target++;
-		source++;
-		num--;
+		while (i < num)
+		{
+			ptr[i] = source[i];
+			i++;
+		}
 	}
 	return (target);
 }
-/*
+
 #include <stdio.h>
 
 int	main(void)
 {
+/*
 	char strA[20] = "Welcome";
 	char strB[20];
 
@@ -33,5 +42,9 @@ int	main(void)
 	
 	ft_memcpy(strB, strA, 3);
 	printf("\nAfter:\nStrA: %s\nStrB: %s\n", strA, strB);
-}
 */
+	char *r = ft_memcpy("             m", ((void *)0), 17);
+
+	printf("Return: %s\n", r);
+}
+
