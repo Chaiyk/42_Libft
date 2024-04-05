@@ -6,38 +6,42 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 12:32:12 by ychai             #+#    #+#             */
-/*   Updated: 2024/04/02 15:12:46 by ychai            ###   ########.fr       */
+/*   Updated: 2024/04/05 11:25:03 by Steven           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_memcmp(const char *str1, const char *str2, int len)
+int	ft_memcmp(const void *str1, const void *str2, int len)
 {
-	int	count;
-	int	ret;
+	int			count;
+	char const	*s1;
+	char const	*s2;
 
 	count = 0;
-	ret = 0;
-	while (count < len)
+	s1 = str1;
+	s2 = str2;
+	if (len > 0 || s1[count] != s2[count])
 	{
-		if (str1[count] != str2[count])
+		while (count < len)
 		{
-			ret = str1[count] - str2[count];
-			if (ret < 0)
-				ret *= -1;
-			return (ret);
+			if (s2[count] != s1[count])
+			{
+				printf("Comparing: %hhu | %hhu\n", s1[count], s2[count]);
+				return (s1[count] - s2[count]);
+			}
+			count++;
 		}
-		count++;
 	}
-	return (ret);
+	return (0);
 }
-/*
+
 #include <stdio.h>
 #include <string.h>
 
 int	main(void)
 {
+/*
 	char*	str1;
 	char*	str2;
 	int		i;
@@ -51,13 +55,30 @@ int	main(void)
 	i = 5;
 	printf("String 1: %s\nString 2: %s\nCheck Length: %d\nOri Return: %d\nOwn Return: %d\n\n", str1, str2, i, memcmp(str1, str2, i), 
 		ft_memcmp(str1, str2, i));
-
+*/
+	int ret_i = 0;
 	char *s1 = "\xff\xaa\xde\xffMACOSX\xff";
 	char *s2 = "\xff\xaa\xde\x02";
 	size_t size = 8;
 
-	printf("Main: %s\n", s1);
-	int ret_i = ft_memcmp(s1, s2, size);
+	printf("\nMain Check: %d | %s | %s\n", ret_i, s1, s2);
+	ret_i = ft_memcmp(s1, s2, size);	
 	printf("Return: %d\n", ret_i);
+
+	ret_i = 0;
+	s1 = "atoms\0\0\0\0";
+	s2 = "atoms\0abc";
+	printf("\nMain Check: %d | %s | %s\n", ret_i, s1, s2);
+	ret_i = ft_memcmp(s1, s2, size);
+	printf("Return: %d\n", ret_i);
+
+	ret_i = 0;
+	s1 = "\xff\0\0\xaa\0\xde\xffMACOSX\xff";
+	s2 = "\xff\0\0\xaa\0\xde\x00MBS";
+	printf("\nMain Check: %d | %s | %s\n", ret_i, s1, s2);
+	ret_i = ft_memcmp(s1, s2, size);
+	printf("Return: %d\n", ret_i);
+
+
 }
-*/
+

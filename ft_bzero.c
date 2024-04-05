@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(char *ptr, int i)
+void	ft_bzero(void *ptr, int i)
 {
 	while (i > 0)
 	{

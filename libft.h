@@ -20,7 +20,7 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_strlen(char const *str);
 void	*ft_memset(void *b, int c, int len);
-void	ft_bzero(char *ptr, int i);
+void	ft_bzero(void *ptr, int i);
 void	*ft_memcpy(void *target, const char *source, int num);
 void	*ft_memmove(char *dest, char *source, int num);
 int		ft_strlcpy(char *dest, char *source, int length);

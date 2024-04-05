@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:05:49 by ychai             #+#    #+#             */
-/*   Updated: 2024/03/14 14:06:35 by ychai            ###   ########.fr       */
+/*   Updated: 2024/04/05 15:56:21 by Steven           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putstr_fd(char *c, int fd)
 	i = 0;
 	while (c[i])
 	{
-		write(fd, &c[i], 1);
+		ft_putchar_fd(c[i], fd);
 		i++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 10:52:47 by ychai             #+#    #+#             */
-/*   Updated: 2024/04/02 13:37:27 by ychai            ###   ########.fr       */
+/*   Updated: 2024/04/03 11:50:18 by Steven           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memcpy(void *target, const char *source, int num)
 
 	ptr = target;
 	i = 0;
-	if (source != NULL)
+	if (source != NULL || target != NULL)
 	{
 		while (i < num)
 		{
@@ -29,12 +29,12 @@ void	*ft_memcpy(void *target, const char *source, int num)
 	}
 	return (target);
 }
-
+/*
 #include <stdio.h>
+#include <string.h>
 
 int	main(void)
 {
-/*
 	char strA[20] = "Welcome";
 	char strB[20];
 
@@ -42,9 +42,5 @@ int	main(void)
 	
 	ft_memcpy(strB, strA, 3);
 	printf("\nAfter:\nStrA: %s\nStrB: %s\n", strA, strB);
-*/
-	char *r = ft_memcpy("             m", ((void *)0), 17);
-
-	printf("Return: %s\n", r);
 }
-
+*/

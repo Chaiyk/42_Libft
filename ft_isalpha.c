@@ -6,14 +6,16 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:57:37 by ychai             #+#    #+#             */
-/*   Updated: 2024/03/14 13:31:35 by ychai            ###   ########.fr       */
+/*   Updated: 2024/04/05 11:46:43 by Steven           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(char text)
 {
-	if ((text >= 97 && text <= 122) || (text >= 65 && text <= 90))
+	if (text >= 65 && text <= 90)
 		return (1);
+	else if ((text >= 97 && text <= 122))
+		return (2);
 	else
 		return (0);
 }
@@ -21,16 +23,15 @@ int	ft_isalpha(char text)
 #include <stdio.h>
 #include <ctype.h>
 
-int	main(int argc, char *argv[])
+int	main(void)
 {
-	if(argc == 2)
+	int	a;
+
+	a = 0;
+	while (a <= 530)
 	{
-		printf("%d\n", isalpha(*argv[1]));
-		printf("%d\n", ft_isalpha(*argv[1]));
+		printf("char: %c = %d | Ori: %d | Return: %d\n", a, a, isalpha(a), ft_isalpha(a));
+		a++;
 	}
-	else if (argc == 1)
-		printf("Kindly input something\n");
-	else
-		printf("please enter one input only\n");
 }
 */

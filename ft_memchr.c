@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 08:46:02 by ychai             #+#    #+#             */
-/*   Updated: 2024/03/14 13:41:10 by ychai            ###   ########.fr       */
+/*   Updated: 2024/04/03 14:12:19 by Steven           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,13 @@ void	*ft_memchr(char *str, int chr, int n)
 	}
 	return (0);
 }
-/*
+
 #include <stdio.h>
 #include <string.h>
 
 int	main(void)
 {
+/*
 	char	strA[20] = "Hello World!";
 	int		chr;
 	int		i;
@@ -46,5 +47,8 @@ int	main(void)
 	printf("\nString: %s\nCharacter: %c\nNum: %d\n
 			Ori Return: %s\nOwn Return: %s\n\n",\
 		   	strA, chr, i, memchr(strA, chr, i), ft_memchr(strA, chr, i));
-}
 */
+
+
+}
+
