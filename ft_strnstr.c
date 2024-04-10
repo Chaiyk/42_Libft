@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 08:52:43 by ychai             #+#    #+#             */
-/*   Updated: 2024/04/05 14:13:20 by Steven           ###   ########.fr       */
+/*   Updated: 2024/04/09 15:32:49 by Steven           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strnstr(char *main_str, char *check_str, int len)
 	}
 	return (0);
 }
-
+/*
 #include <stdio.h>
 #include <string.h>
 
@@ -71,4 +71,4 @@ int	main(void)
 	printf("\nLen is: %d\nString to Check: %s\nOrt: %s \n Ret: %s\n"
 		, i, check_str, strnstr(main_str, check_str, i), ft_strnstr(main_str, check_str, i));
 }
-
+*/
