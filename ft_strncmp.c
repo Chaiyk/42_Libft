@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 12:06:23 by ychai             #+#    #+#             */
-/*   Updated: 2024/04/05 12:37:03 by Steven           ###   ########.fr       */
+/*   Updated: 2024/04/12 10:46:35 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_strncmp(char const *str1, char const *str2, int len)
 	else
 		return (0);
 }
-
+/*
 #include <stdio.h>
 #include <string.h>
 
@@ -67,4 +67,4 @@ int	main (void)
 	printf("\nString 1: %s\nString 2: %s\nLen: %d\nOri Return: %d\nOwn Return: %d\n"
 		, str1, str2, i, strncmp(str1, str2, i), ft_strncmp(str1, str2, i));
 }
-
+*/
