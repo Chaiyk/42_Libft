@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:05:20 by ychai             #+#    #+#             */
-/*   Updated: 2024/04/05 15:50:00 by Steven           ###   ########.fr       */
+/*   Updated: 2024/04/15 19:15:23 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ char	*ft_substr(char const *s, unsigned int start, int len)
 	char	*temp_str;
 	int		count;
 
-	count = 0;
-	if (*s == '\0')
+	if (s == NULL)
 		return (NULL);
 	temp_str = (char *)malloc(ft_strlen(s) + 1);
+	count = 0;
 	if (temp_str == NULL)
 		return (NULL);
-	while (s[count] != '\0' && count < len)
+	while (count < len)
 	{
 		temp_str[count] = s[count + start];
 		count++;

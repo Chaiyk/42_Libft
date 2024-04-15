@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 10:52:47 by ychai             #+#    #+#             */
-/*   Updated: 2024/04/03 11:50:18 by Steven           ###   ########.fr       */
+/*   Updated: 2024/04/15 18:56:48 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memcpy(void *target, const char *source, int num)
 {
 	char	*ptr;
-	int	i;
+	int		i;
 
 	ptr = target;
 	i = 0;

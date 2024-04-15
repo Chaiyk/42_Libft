@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 11:32:46 by ychai             #+#    #+#             */
-/*   Updated: 2024/04/05 11:55:18 by Steven           ###   ########.fr       */
+/*   Updated: 2024/04/15 19:03:40 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,11 @@ int	main(void)
 	while (i < 256)
 	{
 		if (toupper(i) == ft_toupper(i))
-			printf("Char: %c = %d | Ori: %d | Ret: %d\n", i, i, toupper(i), ft_toupper(i));
+			printf("Char: %c = %d | Ori: %d | 
+Ret: %d\n", i, i, toupper(i), ft_toupper(i));
 		else
-			printf("******\nChar: %c = %d | Ori: %d | Ret: %d\n******", i, i, toupper(i), ft_toupper(i));
+			printf("******\nChar: %c = %d | 
+Ori: %d | Ret: %d\n******", i, i, toupper(i), ft_toupper(i));
 		i++;
 	}
 }

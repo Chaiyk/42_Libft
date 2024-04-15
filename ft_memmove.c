@@ -6,71 +6,33 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 13:17:50 by ychai             #+#    #+#             */
-/*   Updated: 2024/04/12 12:55:43 by ychai            ###   ########.fr       */
+/*   Updated: 2024/04/15 19:04:24 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	printf("\n--Getting--\nDst: %s | Src: %s | Len: %zu\n", dst, src, len);
-	unsigned int	i;
-	char			*temp_dst;
-	const char		*temp_src[0xFFFF];
+	char	*temp_dst;
+	char	*temp_src;
+	size_t	i;
 
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	if (&dst[0] < &src[0])
+		return (ft_memcpy(dst, src, len));
+	temp_dst = (char *)dst;
+	temp_src = (char *)src;
 	i = 0;
-	temp_dst = dst;
-
-	if (src == 0 || len == 0)
-		return(dst);
-
-	while ((const char *)src != 0 && i < len)
+	while (len > 0)
 	{
-		printf("%d - %d = %c\n", i, (const char)src, (const char)src);
-		temp_src[i] = src;
-		src++;
-		i++;
+		temp_dst[len - 1] = temp_src[len - 1];
+		len--;
 	}
-	//printf("Yes:: %s\n", temp_src);
-/*
-	while (temp_src[i] != 0 && i < len)
-	{
-		printf("Copying: %d = %c\n", *temp_src, *temp_src);
-		temp_dst = temp_src;
-		temp_dst++;
-		temp_src++;
-		i++;
-	}
-*/
 	return (dst);
 }
-
-void	*old_ft_memmove(char *dest, char *source, int num)
-{
-	char	temp[0xFFFF];
-	int		i;
-
-	i = 0;
-	if (source == 0 || num == 0)
-		return (dest);
-	while (source[i] != '\0')
-	{
-		temp[i] = source[i];
-		i++;
-	}
-	temp[i] = '\0';
-	i = 0;
-	while (i <= num)
-	{
-		dest[i] = temp[i];
-		i++;
-	}
-	dest[i] = temp[i];
-	return (dest);
-}
-
+/*
 #include <stdio.h>
 #include <string.h>
 
@@ -95,5 +57,19 @@ int	main(void)
 	rtn = ft_memmove(dst, src, size);
 	rtn = ft_memmove("", "" - 1, 0);
 	printf("Return: %s\n", rtn);
-}
 
+	printf("\n-----\nTest 3\n-----\n");
+	bzero(dst, 0xF0);
+	src = "this is a good nyancat ! \r\n";
+	size = strlen(src);
+	rtn = ft_memmove(dst, src, size);
+	printf("Return: %s\n", rtn);
+
+	printf("\n-----\nTest 4\n-----\n");
+	bzero(dst, 0xF0);
+	src = "the cake is a lie !\0I'm hidden lol\r\n";
+	size = strlen(src);
+	rtn = ft_memmove(dst, src, 100);
+	printf("Return: %s\n", rtn);
+}
+*/

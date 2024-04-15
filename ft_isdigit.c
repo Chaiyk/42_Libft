@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 10:15:09 by ychai             #+#    #+#             */
-/*   Updated: 2024/04/05 11:45:25 by Steven           ###   ########.fr       */
+/*   Updated: 2024/04/15 18:54:05 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int	main(void)
 	c = -1;
 	while (c <= 530)
 	{
-		printf("Char: %c = %d | Ori: %d | Ret: %d\n", c, c, isdigit(c), ft_isdigit(c));
+		printf("Char: %c = %d | Ori: %d | Ret: %d\n"
+			, c, c, isdigit(c), ft_isdigit(c));
 		c++;
 	}
 }
