@@ -6,11 +6,11 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 11:35:04 by ychai             #+#    #+#             */
-/*   Updated: 2024/03/14 14:14:57 by ychai            ###   ########.fr       */
+/*   Updated: 2024/04/15 19:39:24 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_strchr(char *str, int chr)
+char	*ft_strchr(char *str, int chr)
 {
 	int	count;
 
