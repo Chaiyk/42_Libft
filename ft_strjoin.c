@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:22:38 by ychai             #+#    #+#             */
-/*   Updated: 2024/04/16 12:35:19 by ychai            ###   ########.fr       */
+/*   Updated: 2024/04/16 20:05:47 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	unsigned int	main_count;
 	unsigned int	sub_count;
 
-	temp_str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)));
+	temp_str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (temp_str == NULL)
 		return (NULL);
 	main_count = 0;
