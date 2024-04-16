@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 08:52:43 by ychai             #+#    #+#             */
-/*   Updated: 2024/04/15 19:01:09 by ychai            ###   ########.fr       */
+/*   Updated: 2024/04/16 17:09:26 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strnstr(const char *main, const char *set, size_t len)
 	i = 0;
 	match = 0;
 	set_len = ft_strlen(set);
-	if (!set || len == 0)
+	if (!set)
 		return ((char *) main);
 	while (main[i] != '\0' && (i + match) < len)
 	{
@@ -55,36 +55,33 @@ int	main(void)
 
 	i = 5;
 	check_str = "llo";
-	printf("\nLen is: %d\nString to Check: %s\nReturn: %s\n"
-		, i, check_str, ft_strnstr(main_str, check_str, i));
+	printf("\nLen is: %d\nString to Check: %s\nOri: %s \nRet: %s\n"
+		, i, check_str, strnstr(main_str, main_str, i), 
+		ft_strnstr(main_str, main_str, i));
+
 
 	check_str = "Wor";
-	printf("\nLen is: %d\nString to Check: %s\nReturn: %s\n"
-		, i, check_str, ft_strnstr(main_str, check_str, i));
+	printf("\nLen is: %d\nString to Check: %s\nOri: %s \nRet: %s\n"
+		, i, check_str, strnstr(main_str, main_str, i), 
+		ft_strnstr(main_str, main_str, i));
+
 
 	check_str = "all";
-	printf("\nLen is: %d\nString to Check: %s\nReturn: %s\n"
-		, i, check_str, ft_strnstr(main_str, check_str, i));
+	printf("\nLen is: %d\nString to Check: %s\nOri: %s \nRet: %s\n"
+		, i, check_str, strnstr(main_str, main_str, i), 
+		ft_strnstr(main_str, main_str, i));
+
 
 	i = 2;
 	check_str = "llo";
-	printf("\nLen is: %d\nString to Check: %s\nReturn: %s\n"
-		, i, check_str, ft_strnstr(main_str, check_str, i));
-
-
-	main_str = "MZIRIBMZIRIBMZE123";
-	printf("\n*Main String: %s\n", main_str);
-
-	check_str = "MZIRIBMZE";
-	i = strlen(check_str);
 	printf("\nLen is: %d\nString to Check: %s\nOri: %s \nRet: %s\n"
-		, i, check_str, strnstr(main_str, check_str, i), 
-		ft_strnstr(main_str, check_str, i));
+		, i, check_str, strnstr(main_str, main_str, i), 
+		ft_strnstr(main_str, main_str, i));
 
-	main_str = "AAAAAAAAAAAAAA";
-	printf("\n*Main String: %s\n", main_str);
-	
-	i = strlen(main_str);
+
+	main_str = "aaabcabcd";
+	check_str = "aabc";
+	i = 0;
 	printf("\nLen is: %d\nString to Check: %s\nOri: %s \nRet: %s\n"
 		, i, check_str, strnstr(main_str, main_str, i), 
 		ft_strnstr(main_str, main_str, i));

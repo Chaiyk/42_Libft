@@ -6,22 +6,24 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 11:35:04 by ychai             #+#    #+#             */
-/*   Updated: 2024/04/15 19:39:24 by ychai            ###   ########.fr       */
+/*   Updated: 2024/04/16 16:07:28 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(char *str, int chr)
+#include "libft.h"
+
+char	*ft_strchr(const char *str, int chr)
 {
 	int	count;
 
 	count = 0;
-	while (str[count] != chr)
+	while (str[count] != (char)chr)
 	{
 		if (str[count] == '\0')
-			return (0);
+			return (NULL);
 		count++;
 	}
-	return (str + count);
+	return ((char *)str + count);
 }
 /*
 #include <stdio.h>
@@ -40,5 +42,11 @@ int	main(void)
 	chr = 'a';
 	printf("\nString: %s\nChracter: %c\nOri Return: %s\nOwn Return: %s\n"
 		,str, chr, strchr(str, chr), ft_strchr(str, chr));
+
+	str = "tripouille";
+	chr = 't' + 256;
+	printf("\nString: %s\nChracter: %c\nOri Return: %s\nOwn Return: %s\n"
+		,str, chr, strchr(str, chr), ft_strchr(str, chr));
+
 }
 */

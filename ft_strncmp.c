@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 12:06:23 by ychai             #+#    #+#             */
-/*   Updated: 2024/04/15 19:04:10 by ychai            ###   ########.fr       */
+/*   Updated: 2024/04/16 16:20:40 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	ft_strncmp(char const *str1, char const *str2, int len)
 	}
 	if (count < len && (str1[count] != '\0' || str2[count] != '\0'))
 		return ((unsigned char) str1[count] - (unsigned char) str2[count]);
+	else if (len < 0)
+		return (-1);
 	else
 		return (0);
 }
@@ -39,34 +41,42 @@ int	main (void)
 	int		i;
 
 	i = 1;
-	printf("\nString 1: %s\nString 2: %s\nLen: %d\nOri Return: %d\n
-		Own Return: %d\n", str1, str2, i, 
-		strncmp(str1, str2, i), ft_strncmp(str1, str2, i));
+	printf("\nString 1: %s\nString 2: %s\nLen: %d\n", 
+			str1, str2, i);
+	printf("Ori Return: %d\nOwn Return: %d\n", 
+			strncmp(str1, str2, i), ft_strncmp(str1, str2, i));
 
 	i = 5;
-	printf("\nString 1: %s\nString 2: %s\nLen: %d\nOri Return: %d\n
-		Own Return: %d\n", str1, str2, i, 
-		strncmp(str1, str2, i), ft_strncmp(str1, str2, i));
+	printf("\nString 1: %s\nString 2: %s\nLen: %d\n", 
+			str1, str2, i);
+	printf("Ori Return: %d\nOwn Return: %d\n", 
+			strncmp(str1, str2, i), ft_strncmp(str1, str2, i));
+
 
 	str1 = "\200";
 	str2 = "\0";
 	i = 1;
-	printf("\nString 1: %s\nString 2: %s\nLen: %d\nOri Return: %d\n
-		Own Return: %d\n", str1, str2, i, 
-		strncmp(str1, str2, i), ft_strncmp(str1, str2, i));
+	printf("\nString 1: %s\nString 2: %s\nLen: %d\n", 
+			str1, str2, i);
+	printf("Ori Return: %d\nOwn Return: %d\n", 
+			strncmp(str1, str2, i), ft_strncmp(str1, str2, i));
+
 
 	str1 = "atoms\0\0\0\0";
 	str2 = "atoms\0abc";
 	i = 8;
-	printf("\nString 1: %s\nString 2: %s\nLen: %d\nOri Return: %d\n
-		Own Return: %d\n", str1, str2, i, 
-		strncmp(str1, str2, i), ft_strncmp(str1, str2, i));
+	printf("\nString 1: %s\nString 2: %s\nLen: %d\n", 
+			str1, str2, i);
+	printf("Ori Return: %d\nOwn Return: %d\n", 
+			strncmp(str1, str2, i), ft_strncmp(str1, str2, i));
 
-	str1 = "\x12\xff\x65\x12\xbd\xde\xad";
-	str2 = "\x12\x02";
-	i = 6;
-	printf("\nString 1: %s\nString 2: %s\nLen: %d\nOri Return: %d\n
-		Own Return: %d\n", str1, str2, i, 
-		strncmp(str1, str2, i), ft_strncmp(str1, str2, i));
+
+	str1 = "1234";
+	str2 = "1235";
+	i = -1;
+	printf("\nString 1: %s\nString 2: %s\nLen: %d\n", 
+			str1, str2, i);
+	printf("Ori Return: %d\nOwn Return: %d\n", 
+			strncmp(str1, str2, i), ft_strncmp(str1, str2, i));
 }
 */

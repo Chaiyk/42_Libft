@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:20:04 by ychai             #+#    #+#             */
-/*   Updated: 2024/03/14 14:22:21 by ychai            ###   ########.fr       */
+/*   Updated: 2024/04/16 17:14:23 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,43 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	if (!s)
+	if (!s || !f)
 		return ;
 	while (s[i])
 	{
-		f(1, &s[i]);
+		f(i, &s[i]);
 		i++;
 	}
 }
 /*
 #include <stdio.h>
 
-void	f(unsigned int i, char* chr)
+void	f(unsigned int i, char *chr)
 {
-	printf("%s\n", chr);
-	i++;
+	printf("Running");
+	*chr += i;
 }
-
 
 int main(void)
 {
 	char *s;
 
-	s = "abcdefg";
+	s = "";
 	printf("\nString: %s\n", s);
-	ft_striteri(s, *f);
+	ft_striteri(s, f);
+	printf("Return: %s\n", s);
+
+	s = "0";
+	printf("\nString: %s\n", s);
+	ft_striteri(s, f);
+	printf("Return: %s\n", s);
+
+	s = "0000000000";
+	printf("\nString: %s\n", s);
+	ft_striteri(s, f);
 	printf("Return: %s\n", s);
 }
 */

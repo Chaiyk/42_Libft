@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:05:20 by ychai             #+#    #+#             */
-/*   Updated: 2024/04/15 19:15:23 by ychai            ###   ########.fr       */
+/*   Updated: 2024/04/16 16:37:30 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_substr(char const *s, unsigned int start, int len)
 
 	if (s == NULL)
 		return (NULL);
-	temp_str = (char *)malloc(ft_strlen(s) + 1);
+	temp_str = (char *)malloc(sizeof(char) * (len + 1));
 	count = 0;
 	if (temp_str == NULL)
 		return (NULL);
-	while (count < len)
+	while (count < len && start < (unsigned int)ft_strlen(s))
 	{
 		temp_str[count] = s[count + start];
 		count++;
@@ -36,11 +36,18 @@ char	*ft_substr(char const *s, unsigned int start, int len)
 
 int	main(void)
 {
-
 	const char*	str;
+	int			size;
 
 	str = "Hello World!!";
-	printf("\nMain String: %s\nReturn:%s\n", str, ft_substr(str, 3, 6));
+	size = 6;
+	printf("\nMain String: %s\n", str);
+	printf("Rtn:%s\n", ft_substr(str, 3, size));
+
+	str = "01234";
+	size = 10;
+	printf("\nMain String: %s\n", str);
+	printf("Rtn:%s\n", ft_substr(str, 10, size));
 
 }
 */

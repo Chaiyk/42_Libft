@@ -6,9 +6,11 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 12:01:05 by ychai             #+#    #+#             */
-/*   Updated: 2024/04/15 19:01:40 by ychai            ###   ########.fr       */
+/*   Updated: 2024/04/16 16:21:00 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strrchr(char *str, int chr)
 {
@@ -19,7 +21,7 @@ char	*ft_strrchr(char *str, int chr)
 	temp = 0;
 	while (str[count] != '\0')
 	{
-		if (str[count] == chr)
+		if (str[count] == (char)chr)
 			temp = str + count;
 		count++;
 	}
@@ -42,18 +44,18 @@ int	main(void)
 	str = "Hello World!!";
 
 	chr = 'a';
-	printf("\nString: %s\nCharacter: %c\nOri Return: %s\n
-	Own Return: %s\n\n", str, chr, strrchr(str, chr), ft_strrchr(str,chr));
+	printf("\nString: %s\nCharacter: %c\nOri Return: %s\nOwn Return: 
+			%s\n\n", str, chr, strrchr(str, chr), ft_strrchr(str,chr));
 
 	chr = 'o';
-	printf("\nString: %s\nCharacter: %c\nOri Return: %s\n
-	Own Return: %s\n\n", str, chr, strrchr(str, chr), ft_strrchr(str,chr));
+	printf("\nString: %s\nCharacter: %c\nOri Return: %s\nOwn Return: 
+			%s\n\n", str, chr, strrchr(str, chr), ft_strrchr(str,chr));
 
 
 	str = "Testing \0 in \0this \0string";
 
 	chr = '\0';
-	printf("\nString: %s\nCharacter: %c\nOri Return: %s\n
-	Own Return: %s\n\n", str, chr, strrchr(str, chr), ft_strrchr(str,chr));
+	printf("\nString: %s\nCharacter: %c\nOri Return: %s\nOwn Return:
+		   	%s\n\n", str, chr, strrchr(str, chr), ft_strrchr(str,chr));
 }
 */

@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:07:17 by ychai             #+#    #+#             */
-/*   Updated: 2024/03/14 14:13:07 by ychai            ###   ########.fr       */
+/*   Updated: 2024/04/16 17:30:21 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,55 +23,40 @@ int	ft_count(char const *s, char const c)
 	{
 		while (s[i] == c)
 			i++;
-		if (s[i] != '\0')
+		if (s[i])
 			count++;
-		while (s[i] != c && s[i] != '\0')
+		while (s[i] != c && s[i])
 			i++;
 	}
 	return (count);
 }
 
-char	*ft_strndup(char const *s, size_t i)
-{
-	size_t	count;
-	char	*temp_str;
-
-	count = 0;
-	temp_str = malloc(sizeof(s) * (i + 1));
-	while (s[count] && count < i)
-	{
-		temp_str[count] = s[count];
-		count++;
-	}
-	temp_str[count] = '\0';
-	return (temp_str);
-}
-
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		first_chr;
-	int		match;
-	int		arr_count;
+	int		len;
+	size_t	arr_count;
 	char	**arr;
 
-	i = 0;
-	first_chr = 0;
+	arr = (char **)malloc ((ft_count(s, c) + 1) * sizeof(char *));
+	if (!s || arr == NULL)
+		return (NULL);
+	len = 0;
 	arr_count = 0;
-	arr = malloc (sizeof(s) * (ft_count(s, c) + 1));
-	first_chr ++;
-	if (arr == 0)
-		return (0);
-	while (s[i])
+	while (*s)
 	{
-		while (s[i] == c)
-			i++;
-		match = i;
-		while (s[i] != c && s[i])
-			i++;
-		arr[arr_count] = (ft_strndup(s + match, i - match));
-		arr_count ++;
+		while (*s == c && s)
+			s++;
+		if (*s)
+		{
+			if (!ft_strchr(s, c))
+				len = ft_strlen(s);
+			else
+				len = ft_strchr(s, c) - s;
+			arr[arr_count++] = ft_substr(s, 0, len);
+			s += len;
+		}
 	}
+	arr[arr_count] = NULL;
 	return (arr);
 }
 /*
@@ -79,26 +64,36 @@ char	**ft_split(char const *s, char c)
 
 int	main(void)
 {
-	char *s, c, **arr;
+	char	*s, c, **arr;
+	int		i;
 
 	s = "/He/ll/o /Wo/rl/d!/!";
 	c = '/';
+	i = 0;
 
-	printf("\nThe String is %s and Character is %c\n", s, c);	
+	printf("\nStr: %s\nChr: %c\n\n", s, c);	
 	arr = ft_split(s,c);
 
-	for (int i = 0; i < 7; i++)
+
+	while (arr[i])
+	{
 		printf("%d = %s\n", i, arr[i]);
+		i++;
+	}
 	free (arr);
+
 
 	s = "***What**Is*This**???***lol****";
 	c = '*';
-	printf("\nThe String is %s and Character is %c\n", s, c);	
-	
-	arr = ft_split(s, c);
+	i = 0;
 
-	for (int i = 0; i < 5; i++)
+	printf("\nStr: %s\nChr: %c\n\n", s, c);	
+	arr = ft_split(s,c);
+	while (arr[i])
+	{
 		printf("%d = %s\n", i, arr[i]);
-	free(arr);
+		i++;
+	}
+	free (arr);
 }
 */
