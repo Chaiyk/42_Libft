@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:23:15 by ychai             #+#    #+#             */
-/*   Updated: 2024/04/16 17:19:19 by ychai            ###   ########.fr       */
+/*   Updated: 2024/04/17 13:24:34 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_isdigit(char text);
 int		ft_isalnum(char text);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-int		ft_strlen(char const *str);
+size_t	ft_strlen(char const *str);
 void	*ft_memset(void *b, int c, int len);
 void	ft_bzero(void *ptr, int i);
 void	*ft_memcpy(void *target, const char *source, int num);

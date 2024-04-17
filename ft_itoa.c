@@ -6,11 +6,25 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 13:35:10 by ychai             #+#    #+#             */
-/*   Updated: 2024/04/16 17:22:22 by ychai            ###   ########.fr       */
+/*   Updated: 2024/04/17 15:53:10 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*ft_strcpy(char *dst, const char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i] != 0)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
+}
 
 int	ft_digit_count(int n)
 {
@@ -33,30 +47,29 @@ char	*ft_itoa(int n)
 	char	*str;
 
 	digit_count = ft_digit_count(n);
-	str = (char *)malloc(sizeof(char) * digit_count + 1);
+	str = (char *)malloc(sizeof(char) * (digit_count + 1));
 	if (str == 0)
 		return (0);
 	str[digit_count--] = '\0';
-	if (n == 0)
-	{
+	if (n == -2147483648)
+		return (ft_strcpy(str, "-2147483648"));
+	else if (n == 0)
 		str[0] = '0';
-		return (str);
-	}
 	if (n < 0)
+	{
 		str[0] = '-';
+		n = -n;
+	}
 	while (n != 0)
 	{
-		if (str[0] == '-')
-			str[digit_count] = '0' + -(n % 10);
-		else
-			str[digit_count] = '0' + (n % 10);
-		digit_count--;
+		str[digit_count--] = (n % 10) + '0';
 		n /= 10;
 	}
 	return (str);
 }
 /*
 #include <stdio.h>
+#include <string.h>
 
 int	main(void)
 {
@@ -72,6 +85,7 @@ int	main(void)
 	num1 = -123;
 	string = ft_itoa(num1);
 	printf("\nNumber: %d\nReturn: %s\n",
+
    	num1, string);
 	free(string);
 
@@ -82,10 +96,16 @@ int	main(void)
 	free(string);
 
 	num1 = 42;
+	string = ft_itoa(42);
+	printf("\nNumber: %d\nReturn: %s\n",
+   	num1, string);
+	free(string);
 
+	num1 = -0x7FFFFFFF - 1;
 	string = ft_itoa(num1);
 	printf("\nNumber: %d\nReturn: %s\n",
    	num1, string);
+
 	free(string);
 
 }

@@ -6,13 +6,15 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 10:14:34 by ychai             #+#    #+#             */
-/*   Updated: 2024/03/14 14:37:49 by ychai            ###   ########.fr       */
+/*   Updated: 2024/04/17 13:24:46 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-long int	ft_strlen(char const *str)
+#include "libft.h"
+
+size_t	ft_strlen(char const *str)
 {
-	long int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')

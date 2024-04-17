@@ -6,7 +6,7 @@
 /*   By: ychai <ychai@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:38:10 by ychai             #+#    #+#             */
-/*   Updated: 2024/03/14 14:40:03 by ychai            ###   ########.fr       */
+/*   Updated: 2024/04/17 16:01:43 by ychai            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		x;
 	char	*str;
 
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	x = 0;
-	if (s == 0 || str == 0)
+	if (!s || !f)
 		return (0);
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (str == 0)
+		return (0);
+	x = 0;
 	while (s[x])
 	{
 		str[x] = f(x, s[x]);
@@ -48,6 +50,18 @@ int	main (void)
 
 	str = "abcde123";
 	ret = ft_strmapi(str, *f);
+	printf("\nString: %s\nReturn: %s\n", str, ret);
+	free (ret);
+
+	ret = ft_strmapi(NULL, *f);
+	printf("\nString: %s\nReturn: %s\n", str, ret);
+	free (ret);
+
+	ret = ft_strmapi(str, NULL);
+	printf("\nString: %s\nReturn: %s\n", str, ret);
+	free (ret);
+
+	ret = ft_strmapi(NULL, NULL);
 	printf("\nString: %s\nReturn: %s\n", str, ret);
 	free (ret);
 }
